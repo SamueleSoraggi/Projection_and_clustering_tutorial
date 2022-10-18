@@ -1,0 +1,14 @@
+name: projectionClustering
+channels:
+  - dloewenstein
+  - defaults
+dependencies:
+  - r-uwot
+  - jupyterlab
+  - ca-certificates
+  - openssl
+  - rise
+  - r-irkernel
+  - certifi
+  - r-factominer
+prefix: /Users/bruger/miniconda3/envs/projectionClustering
