@@ -5,7 +5,7 @@
 
 Depending on your coding skills, you can decide how much you want to do for the assignment. Also fiddling with the Iris tutorial and trying out things can be ok :)
 
-Choose a dataset or work on the Iris data. Various datasets are present in the folder `Data` of this github repository ([link here](https://github.com/SamueleSoraggi/Projection_and_clustering_tutorial/tree/main/Data)), or you can type the function `data()` in R to open one of many datasets, such as `data(decathlon)`, `data(iris)` or `data(Cars1993)`. The data has various columns, keep only the numeric ones and eventual variables with labels if they are present.
+Choose a dataset or work on one of the examples you can find in the menu under `Code`. Various datasets are present in the folder `Data` of this github repository ([link here](https://github.com/SamueleSoraggi/Projection_and_clustering_tutorial/tree/main/Data)), or you can type the function `data()` in R to open one of many datasets, such as `data(decathlon)`, `data(iris)` or `data(Cars93)`. The data has various columns, keep only the numeric ones and eventual variables with labels if they are present.
 
 
 Copy-paste the code for the exercise from the book, so that you define the functions for tSNE. You can copy the code also here from the section `Code-->Book code`. 

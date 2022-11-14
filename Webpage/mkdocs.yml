@@ -5,6 +5,7 @@ nav:
 - 'Code':
   - 'Book code': book_code.md
   - 'Iris Example': nb/base notebook iris.ipynb
+  - 'Cars93 Example': nb/base notebook Cars.ipynb
 docs_dir: develop
 site_dir: docs
 plugins:
