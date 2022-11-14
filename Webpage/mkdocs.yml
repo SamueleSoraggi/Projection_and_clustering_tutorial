@@ -1,0 +1,32 @@
+site_name: 'Introduction to NGS data'
+nav:
+- 'Hello': index.md
+- 'Assignment': assignment.md
+- 'Code':
+  - 'Book code': book_code.md
+  - 'Iris Example': nb/base notebook iris.ipynb
+docs_dir: develop
+site_dir: docs
+plugins:
+    - mkdocs-jupyter
+extra_css:
+    - extra.css
+extra_javascript:
+  - javascripts/embed-amd.js
+theme: 
+    name: material
+    #favicon: img/sandbox1.png
+    #logo: img/logo_NGS_aarhus.png
+    palette:
+      primary: grey
+      accent: cyan
+markdown_extensions:
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
