@@ -1,6 +1,5 @@
 # Projection exercise
 
-First of all, copy the code for the exercise from the book. You can copy it also here from the section `Code-->Book code`. 
 
 ## assignment
 
@@ -8,9 +7,12 @@ Depending on your coding skills, you can decide how much you want to do for the 
 
 Choose a dataset or work on the Iris data. Various datasets are present in the folder `Data` of this github repository [link here](hello), or you can type the function `data()` in R to open one of many datasets, such as `data(decathlon)`, `data(iris)` or `data(Cars1993)`. The data has various columns, keep only the numeric ones and eventual variables with labels if they are present.
 
+
+Copy-paste the code for the exercise from the book, so that you define the functions for tSNE. You can copy the code also here from the section `Code-->Book code`. 
+
 Then:
 
-- Try to run various projection methods as with the iris data. You can reuse the code from `Code-->Iris example`. Fiddle around and try some parameters, use the help functions to see the documentation, for example `help(PCA)`.
+- Try to run various projection methods as with the iris data. You can reuse the code from `Code-->Iris example` (note that there I import the file `functions.R`). Fiddle around and try some parameters, use the help functions to see the documentation, for example `help(PCA)`.
 
 - See if your data shows some patterns in your projections. Do you have any outliers? Are there some clear separations into categories?
 
