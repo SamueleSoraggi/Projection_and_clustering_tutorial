@@ -19,4 +19,4 @@ library(microbenchmark)
 Under `Assignment` you find the assignments.
 Under `Code` there is an example of code for the assignment using the Iris data. To run it, you need to download the file `functions.R` in the folder `Code` inside the repository ([click here](https://github.com/SamueleSoraggi/Projection_and_clustering_tutorial/blob/main/Code/functions.R)). Put the file inside he same folder where you are coding. This file contains also the solution to the exercise, so you can compare how you try to solve the assignment and how I did it.
 
-If you want the slides from the presentation, [here they are in both PDF and PPTX format]([not working link.com](https://github.com/SamueleSoraggi/Projection_and_clustering_tutorial/tree/main/Slides)). You can recycle them and just mention the original author.
+If you want the slides from the presentation, [here they are in both PDF and PPTX format](https://github.com/SamueleSoraggi/Projection_and_clustering_tutorial/tree/main/Slides). You can recycle them and just mention the original author.
