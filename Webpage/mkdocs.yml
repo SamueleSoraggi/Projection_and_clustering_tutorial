@@ -1,4 +1,4 @@
-site_name: 'Introduction to NGS data'
+site_name: 'Projection and clustering tutorial'
 nav:
 - 'Hello': index.md
 - 'Assignment': assignment.md
