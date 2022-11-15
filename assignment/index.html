@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.5.2">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f9400aa.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
@@ -28,6 +28,7 @@
         
       
       
+
     
     
     
@@ -42,10 +43,11 @@
     
       <link rel="stylesheet" href="../extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -222,22 +224,37 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../nb/Datasets/" class="md-nav__link">
+        Datasets
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_4">
           Code
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Code" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Code
         </label>
@@ -278,7 +295,21 @@
   
     <li class="md-nav__item">
       <a href="../nb/base%20notebook%20Cars/" class="md-nav__link">
-        Iris Tutorial
+        Cars93 Tutorial
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nb/base%20notebook%20decathlon/" class="md-nav__link">
+        Decathlon Tutorial
       </a>
     </li>
   
@@ -332,43 +363,52 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
 <h1 id="projection-exercise">Projection exercise</h1>
 <h2 id="assignment">assignment</h2>
-<p>Depending on your coding skills, you can decide how much you want to do for the assignment. Also fiddling with the Iris tutorial and trying out things can be ok :)</p>
-<p>Choose a dataset or work on one of the examples you can find in the menu under <code>Code</code>. Various datasets are present in the folder <code>Data</code> of this github repository (<a href="https://github.com/SamueleSoraggi/Projection_and_clustering_tutorial/tree/main/Data">link here</a>), or you can type the function <code>data()</code> in R to open one of many datasets, such as <code>data(decathlon)</code>, <code>data(iris)</code> or <code>data(Cars93)</code>. The data has various columns, keep only the numeric ones and eventual variables with labels if they are present.</p>
-<p>Copy-paste the code for the exercise from the book, so that you define the functions for tSNE. You can copy the code also here from the section <code>Code--&gt;Book code</code>. </p>
+<p><strong>Depending on your coding skills</strong>, you can decide how much you want to do for the assignment. Also fiddling with a tutorial and trying out things can be ok :) To run one of the tutorials, you need to download the file <code>functions.R</code> in the folder <code>Code</code> of the repository (<a href="https://github.com/SamueleSoraggi/Projection_and_clustering_tutorial/blob/main/Code/functions.R">click here</a>). Put the file inside the same folder where you are coding. This file contains also the solution to the exercise, so you can compare how you try to solve the assignment and how I did it (but don't cheat!).</p>
+<p>1) Choose a dataset or work on one of the examples you can find in the menu under <code>Code</code>. Various datasets are present in the folder <code>Data</code> of this github repository (<a href="https://github.com/SamueleSoraggi/Projection_and_clustering_tutorial/tree/main/Data">link here</a>), or you can type the function <code>data()</code> in R to open one of many datasets, such as <code>data(decathlon)</code>, <code>data(iris)</code> or <code>data(Cars93)</code>. I documented the data under the <code>Datasets</code> menu.</p>
+<p>2) Feel free to Copy-paste the code for the exercise from the book, so that you define the functions for tSNE. You can copy the code also here from the section <code>Code--&gt;Book code</code>. Alternatively, download and source the file <a href="https://github.com/SamueleSoraggi/Projection_and_clustering_tutorial/blob/main/Code/functions.R"><code>functions.R</code></a> into your code.</p>
 <p>Then:</p>
 <ul>
 <li>
-<p>Try to run various projection methods as with the iris data. You can reuse the code from <code>Code--&gt;Iris example</code> (note that there I import the file <code>functions.R</code>). Fiddle around and try some parameters, use the help functions to see the documentation, for example <code>help(PCA)</code>.</p>
+<p>Try to run various projection methods as in the tutorials. You can reuse any of the tutorials to reuse some code. </p>
 </li>
 <li>
-<p>See if your data shows some patterns in your projections. Do you have any outliers? Are there some clear separations into categories?</p>
+<p>Try some optional parameters in kernel PCA, tSNE and UMAP. See how the perplexity and learning rate <code>rho</code> of tSNE are influential in the result. Use the help to see the documentation of a function, for example <code>help(PCA)</code>.</p>
 </li>
 <li>
-<p>Try to implement one or more improvements as in the slides:</p>
-</li>
-<li>early exaggeration</li>
-<li>initialization with PCA or other projections</li>
-<li>momentum addition to gradient descent</li>
-<li>
-<p>faster calculation of affinities in low dimension avoiding for loop</p>
+<p>Does your data shows some patterns in your projections? Do you have any outliers? Are there some clear separations into categories?</p>
 </li>
 <li>
-<p>compare new and old functions with <code>microbenchmark</code> as in the example notebook.</p>
+<p>Try to implement one or more improvements, here listed in order of difficulty of implementation:</p>
+</li>
+<li>faster calculation of affinities <code>Pji</code> in low dimension, avoiding the nested for loops</li>
+<li>early stop criteria on the KL divergence</li>
+<li>early exaggeration </li>
+<li>
+<p>momentum addition to gradient descent</p>
+</li>
+<li>
+<p>Every time you improve your function, compare new and old code with <code>microbenchmark</code> as in the example notebooks. To do this, copy the book functions and give them a new name. If you do that in the file <code>functions.R</code>, benchmark also against the <code>sam_tsne</code> function.</p>
 </li>
 </ul>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
@@ -395,13 +435,13 @@
       
       
         
-        <a href="../book_code/" class="md-footer__link md-footer__link--next" aria-label="Next: Book code" rel="next">
+        <a href="../nb/Datasets/" class="md-footer__link md-footer__link--next" aria-label="Next: Datasets" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Book code
+              Datasets
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -431,10 +471,11 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../assets/javascripts/bundle.39f04ddb.min.js"></script>
       
         <script src="../javascripts/embed-amd.js"></script>
       
