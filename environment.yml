@@ -1,5 +1,6 @@
 name: projectionClustering
 channels:
+  - conda-forge
   - dloewenstein
   - defaults
 dependencies:
@@ -11,4 +12,5 @@ dependencies:
   - r-irkernel
   - certifi
   - r-factominer
-prefix: /Users/bruger/miniconda3/envs/projectionClustering
+  - r-microbenchmark
+  - r-kernlab
