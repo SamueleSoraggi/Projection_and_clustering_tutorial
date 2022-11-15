@@ -2,10 +2,12 @@ site_name: 'Projection and clustering tutorial'
 nav:
 - 'Hello': index.md
 - 'Assignment': assignment.md
+- 'Datasets': nb/Datasets.ipynb
 - 'Code':
   - 'Book code': book_code.md
   - 'Iris Example': nb/base notebook iris.ipynb
   - 'Cars93 Example': nb/base notebook Cars.ipynb
+  - 'decathlon Example': nb/base notebook decathlon.ipynb
 docs_dir: develop
 site_dir: docs
 plugins:

@@ -48,10 +48,9 @@ casl_tsne_p <- function(X, perplexity=15)
 # Returns:
 # An nrow(X) by k matrix of t-SNE embeddings.
 
-casl_tsne <- function(X, init=FALSE, perplexity=30, k=2L, iter=1000L, rho=100) {
+casl_tsne <- function(X, perplexity=30, k=2L, iter=1000L, rho=100) {
     
-    #possibility of initialization of projection
-    if(!is.matrix(init)) Y <- matrix(rnorm(nrow(X) * k), ncol = k) else Y <- init
+    Y <- matrix(rnorm(nrow(X) * k), ncol = k)
     
     P <- casl_tsne_p(X, perplexity) 
     del <- matrix(0, nrow(Y), ncol(Y))

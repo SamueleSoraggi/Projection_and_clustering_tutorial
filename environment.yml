@@ -14,3 +14,4 @@ dependencies:
   - r-factominer
   - r-microbenchmark
   - r-kernlab
+  - r-dbscan
