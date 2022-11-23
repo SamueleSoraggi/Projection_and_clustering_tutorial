@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#projection-exercise" class="md-skip">
+        <a href="#exercise" class="md-skip">
           Skip to content
         </a>
       
@@ -201,8 +201,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#assignment" class="md-nav__link">
-    assignment
+  <a href="#projection" class="md-nav__link">
+    Projection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering" class="md-nav__link">
+    Clustering
   </a>
   
 </li>
@@ -347,8 +354,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#assignment" class="md-nav__link">
-    assignment
+  <a href="#projection" class="md-nav__link">
+    Projection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering" class="md-nav__link">
+    Clustering
   </a>
   
 </li>
@@ -367,18 +381,18 @@
                 
 
 
-<h1 id="projection-exercise">Projection exercise</h1>
-<h2 id="assignment">assignment</h2>
+<h1 id="exercise">Exercise</h1>
 <p><strong>Depending on your coding skills</strong>, you can decide how much you want to do for the assignment. Also fiddling with a tutorial and trying out things can be ok :) To run one of the tutorials, you need to download the file <code>functions.R</code> in the folder <code>Code</code> of the repository (<a href="https://github.com/SamueleSoraggi/Projection_and_clustering_tutorial/blob/main/Code/functions.R">click here</a>). Put the file inside the same folder where you are coding. This file contains also the solution to the exercise, so you can compare how you try to solve the assignment and how I did it (but don't cheat!).</p>
 <p>1) Choose a dataset or work on one of the examples you can find in the menu under <code>Code</code>. Various datasets are present in the folder <code>Data</code> of this github repository (<a href="https://github.com/SamueleSoraggi/Projection_and_clustering_tutorial/tree/main/Data">link here</a>), or you can type the function <code>data()</code> in R to open one of many datasets, such as <code>data(decathlon)</code>, <code>data(iris)</code> or <code>data(Cars93)</code>. I documented the data under the <code>Datasets</code> menu.</p>
 <p>2) Feel free to Copy-paste the code for the exercise from the book, so that you define the functions for tSNE. You can copy the code also here from the section <code>Code--&gt;Book code</code>. Alternatively, download and source the file <a href="https://github.com/SamueleSoraggi/Projection_and_clustering_tutorial/blob/main/Code/functions.R"><code>functions.R</code></a> into your code.</p>
-<p>Then:</p>
+<p>Then do what follows.</p>
+<h2 id="projection">Projection</h2>
 <ul>
 <li>
-<p>Try to run various projection methods as in the tutorials. You can reuse any of the tutorials to reuse some code. </p>
+<p>Try to run various projection methods as in the tutorials. You can reuse any of the tutorials to recycle some code. </p>
 </li>
 <li>
-<p>Try some optional parameters in kernel PCA, tSNE and UMAP. See how the perplexity and learning rate <code>rho</code> of tSNE are influential in the result. Use the help to see the documentation of a function, for example <code>help(PCA)</code>.</p>
+<p>Try some optional parameters in kernel PCA, tSNE and UMAP. See how the perplexity and learning rate <code>rho</code> of tSNE are influential in the result. Use the help to see the documentation of a function, for example <code>help(PCA)</code>. Try also all the UMAP parameters (<code>a</code>, <code>b</code>, <code>learning_rate</code>, <code>neighbors</code>)</p>
 </li>
 <li>
 <p>Does your data shows some patterns in your projections? Do you have any outliers? Are there some clear separations into categories?</p>
@@ -394,6 +408,23 @@
 </li>
 <li>
 <p>Every time you improve your function, compare new and old code with <code>microbenchmark</code> as in the example notebooks. To do this, copy the book functions and give them a new name. If you do that in the file <code>functions.R</code>, benchmark also against the <code>sam_tsne</code> function.</p>
+</li>
+</ul>
+<h2 id="clustering">Clustering</h2>
+<p>The decathlon example right now contains all code you need to apply clustering.
+Choose your best projection between tSNE or UMAP. Then try to apply the following clustering methods to your data:</p>
+<ul>
+<li>
+<p><strong>k-means</strong>: try various amounts of centroids. Then try to choose them with the elbow method or with the help of hierarchical clustering. Do you get some meaningful clusters? Are there small clusters?</p>
+</li>
+<li>
+<p><strong>hierarchical</strong>: try out various linkage methods and tree-cutting thresholds. Is there any result that seems really better than others when looking at the clustering plot?</p>
+</li>
+<li>
+<p><strong>density clustering</strong>: try <code>dbscan</code> and see how changing the <code>eps</code> parameters can really change a lot the output. Try also to change from using the standard distance <code>dist</code> for the input, into using kernel distances (such as gaussian kernel or the t-distribution kernel used in tSNE) or other methods implemented in the function <code>dist</code>. This might make the clustering different. Try <code>hdbscan</code> and see the differences with previous clusterings.</p>
+</li>
+<li>
+<p>Choose one clustering and try to find out if any feature (or group of features) of your data popo to your eye being different across clusters.</p>
 </li>
 </ul>
 
