@@ -168,8 +168,8 @@ sam_tsne <- function(X,
         for (i in seq_len(nrow(X)))
             del[i, ] <- stiffnesses[i, ] %*% t(Y[i, ] - t(Y))
         
-        
-        KL[inum] <- sum(del)
+        #save KL value and add smallest machine epsilon to avoid failing of log function
+        KL[inum] <- sum( P * log( (P+.Machine$double.eps)/(Q+.Machine$double.eps) ) )
     
         Y_old[[ inum%%2+1 ]] <- Y    
     
