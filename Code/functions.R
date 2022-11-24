@@ -88,7 +88,7 @@ sam_tsne_p <- function(X, perplexity=15)
         srange <- c(0, 100)
         #Find P_j|i and adapt sigma
         for(j in seq_len(50)) {
-            Pji <- exp(-D[i, idx] / (2 * svals[i]))  
+            Pji <- exp(-Kdist_D[i, idx] / (2 * svals[i]))  
             Pji <- Pji / sum(Pji) #normalize P_j|i
             H <- -1 * Pji %*% log(Pji, 2)
             if (H < log(perplexity, 2)){ #adapting sigma
