@@ -14,4 +14,5 @@ library(scatterplot3d)
 library(uwot)
 library(kernlab)
 library(microbenchmark)
+library(fastcluster)
 ```
