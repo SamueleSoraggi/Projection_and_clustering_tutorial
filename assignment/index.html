@@ -459,12 +459,14 @@ Choose your best projection between tSNE or UMAP. Then try to apply the followin
 <li>
 <p>We can build the adjacency matrix using the KNN function to calculate the nearest neighbors, and for each i-th point of the data, fill a matrix of zeros with a transformation of the distances to the nearest neighbors. This is a simple code that does that by transforming distances with a negative exponential kernel. You can use others, such as the gaussian kernel.
 <div class="highlight"><pre><span></span><code>spectr_k &lt;- 5
-Kdist &lt;- kNN(data_to_cluster, k=spectr_k)
-Kdist_idx &lt;- Kdist$id #index of neighbors
-Kdist_D &lt;- exp(-Kdist$dist) #transformation of distances
+Kdist &lt;- kNN(proj, k=spectr_k)
+Kdist_idx &lt;- Kdist$id
+Kdist_D &lt;- exp(-Kdist$dist)
 A &lt;- matrix(0, nrow=nrow(proj), ncol=nrow(proj))
-for(i in 1:nrow(proj)) #fillinf the adjacency matrix
+for(i in 1:nrow(proj)) #add neighbours of point i
     A[i, Kdist_idx[i,]] &lt;- Kdist_D[i,]
+for(i in 1:nrow(proj)) #add distances having i in neighbourhood
+    A[i, -Kdist_idx[i,]] &lt;- A[ -Kdist_idx[i,], i]
 </code></pre></div></p>
 </li>
 <li>
