@@ -82,7 +82,6 @@ sam_tsne_p <- function(X, perplexity=15)
     P <- matrix(0, nrow(X), nrow(X)) 
     D <- matrix(0, nrow(X), nrow(X)) 
     svals <- rep(1, nrow(X))
-    #svals = as.array(Kdist_D[,perplexity])
     for (i in seq_along(svals)) {
         idx = Kdist_idx[i,]
         srange <- c(0, 100)

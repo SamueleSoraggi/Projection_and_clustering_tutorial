@@ -36,3 +36,32 @@ Choose your best projection between tSNE or UMAP. Then try to apply the followin
 - **density clustering**: try `dbscan` and see how changing the `eps` parameters can really change a lot the output. Try also to change from using the standard distance `dist` for the input, into using kernel distances (such as gaussian kernel or the t-distribution kernel used in tSNE) or other methods implemented in the function `dist`. This might make the clustering different. Try `hdbscan` and see the differences with previous clusterings.
 
 - Choose one clustering and try to find out if any feature (or group of features) of your data popo to your eye being different across clusters.
+
+### Bonus exercise
+
+We try out implementing on our own the simplest spectral clustering algorithm. To do this we need to first build the adjacency matrix of the graph representing the data.
+
+- We can build the adjacency matrix using the KNN function to calculate the nearest neighbors, and for each i-th point of the data, fill a matrix of zeros with a transformation of the distances to the nearest neighbors. This is a simple code that does that by transforming distances with a negative exponential kernel. You can use others, such as the gaussian kernel.
+```
+spectr_k <- 5
+Kdist <- kNN(proj, k=spectr_k)
+Kdist_idx <- Kdist$id
+Kdist_D <- exp(-Kdist$dist)
+A <- matrix(0, nrow=nrow(proj), ncol=nrow(proj))
+for(i in 1:nrow(proj)) #add neighbours of point i
+    A[i, Kdist_idx[i,]] <- Kdist_D[i,]
+for(i in 1:nrow(proj)) #add distances having i in neighbourhood
+    A[i, -Kdist_idx[i,]] <- A[ -Kdist_idx[i,], i]
+```
+
+- The adjacency matrix describes the data/graph edges and distances. Now we build the Laplacian matrix, which is $D-A$, with D a diagonal with the sums of each row of A. The spectrum of L - after some normalization - describes how the graph can be cut in connected components.
+
+- One of the possible normalizations of L is given by $D^{-1/2}LD^{1/2}$, which renders the laplacian symmetric (be careful of the zeros in D). Once you have done this,
+
+- calculate the SVD of the normalized L, from which you need the eigenvector matrix U. Select it with the first $k$ columns, where $k$ is the number of clusters you want. This matrix represents a projection of your data where points connected in the graph are well connected.
+
+- take the last k columns of U (starting from the last one and backwards), and normalize them so they sum to one.
+
+- apply any clustering you prefere to the normalized matrix you extracted from U.
+
+- Try different numbers of neighbors or different kernels to make the graph more or less connected and see what happens
