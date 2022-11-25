@@ -473,13 +473,16 @@ for(i in 1:nrow(proj)) #add distances having i in neighbourhood
 <p>The adjacency matrix describes the data/graph edges and distances. Now we build the Laplacian matrix, which is <span class="arithmatex">\(D-A\)</span>, with D a diagonal with the sums of each row of A. The spectrum of L - after some normalization - describes how the graph can be cut in connected components.</p>
 </li>
 <li>
-<p>(skip this?) One of the possible normalizations of L is given by <span class="arithmatex">\(D^{-1/2}LD^{1/2}\)</span>, which renders the laplacian symmetric (be careful of the zeros in D). Once you have done this,</p>
+<p>One of the possible normalizations of L is given by <span class="arithmatex">\(D^{-1/2}LD^{1/2}\)</span>, which renders the laplacian symmetric (be careful of the zeros in D). Once you have done this,</p>
 </li>
 <li>
 <p>calculate the SVD of the normalized L, from which you need the eigenvector matrix U. Select it with the first <span class="arithmatex">\(k\)</span> columns, where <span class="arithmatex">\(k\)</span> is the number of clusters you want. This matrix represents a projection of your data where points connected in the graph are well connected.</p>
 </li>
 <li>
-<p>apply any clustering you prefere to the matrix U (with k columns). Before doing that, normalize the matrix so that each row sums to 1. The resulting clusters can be used with your original data.</p>
+<p>take the last k columns of U, and normalize them so they sum to one.</p>
+</li>
+<li>
+<p>apply any clustering you prefere to the normalized matrix U .</p>
 </li>
 <li>
 <p>Try different numbers of neighbors to make the graph more or less connected and see what happens</p>
